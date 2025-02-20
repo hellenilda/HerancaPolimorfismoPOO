@@ -4,21 +4,28 @@ public class ContaBancaria implements TransacaoBancaria {
 	private String titular;
 	private int numeroConta;
 	private double saldo;
-	
-	public double depositar(double valor) {
-		this.saldo += valor; // Depósito
-		System.out.println("Saldo após o depósito: R$ " + saldo);
-		return saldo;
-	}
-
-	public double sacar(double valor) {
-		this.saldo -= (valor + 1.00); // Saque + Taxa
-		System.out.println("Saldo após a taxa: R$ " + saldo);
-		return saldo;
-	}
 
 	public ContaBancaria(double saldo) {
 		this.saldo = saldo;
+	}
+
+	public void depositar(double valor) {
+		if (valor > 0) {
+			saldo += valor;
+			System.out.println("Depósito realizado. Novo saldo: R$ " + saldo);
+		} else {
+			System.out.println("Valor de depósito inválido!");
+		}
+	}
+
+	public void sacar(double valor) {
+		double taxa = 1.00;
+		if (valor + taxa > saldo) {
+			System.out.println("Saldo insuficiente para saque.");
+		} else {
+			saldo -= (valor + taxa);
+			System.out.println("Saque realizado. Saldo atual: R$ " + saldo);
+		}
 	}
 
 	public String getTitular() {

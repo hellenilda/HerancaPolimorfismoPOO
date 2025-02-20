@@ -16,12 +16,20 @@ public class Main {
 		System.out.println("Digite o valor do saque: ");
 		double valorSaque = leitor.nextDouble();
 		
-		if (tipoConta.toUpperCase() == "N") {
-			ContaBancaria normal = new ContaBancaria(saldoInicial);
-			normal.sacar(valorSaque);
-		} else if (tipoConta.toUpperCase() == "E") {
-			ContaEspecial especial = new ContaEspecial(saldoInicial);
-			especial.sacar(valorSaque);
+		TransacaoBancaria conta;
+		
+		if (tipoConta.equalsIgnoreCase("N")) {
+			conta = new ContaBancaria(saldoInicial);
+		} else if (tipoConta.equalsIgnoreCase("E")) {
+			conta = new ContaEspecial(saldoInicial);
+		} else {
+			System.out.println("Tipo de conta inválido!");
+			return;
 		}
+		
+		conta.sacar(valorSaque);
+		System.out.println("Saldo final: R$ " + conta.getSaldo());
+		
+		leitor.close();
 	}
 }
