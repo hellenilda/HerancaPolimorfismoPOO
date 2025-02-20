@@ -1,1 +1,1 @@
-# Atividade: Heranca e Polimorfirsmo
+# Atividade: Herança e Polimorfirsmo
