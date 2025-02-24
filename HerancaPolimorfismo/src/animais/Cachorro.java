@@ -1,4 +1,4 @@
-package questao3;
+package animais;
 
 public class Cachorro extends Animal {
 	private String raca;

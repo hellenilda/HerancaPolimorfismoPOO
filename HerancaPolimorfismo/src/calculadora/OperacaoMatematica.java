@@ -1,4 +1,4 @@
-package questao2;
+package calculadora;
 
 public abstract class OperacaoMatematica {
 	public abstract void calcular(double a, double b);

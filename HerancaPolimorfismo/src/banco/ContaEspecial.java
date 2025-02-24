@@ -1,25 +1,25 @@
-package questao1;
+package banco;
 
-public class ContaBancaria implements TransacaoBancaria {
+public class ContaEspecial implements TransacaoBancaria {
 	private String titular;
 	private int numeroConta;
 	private double saldo;
 
-	public ContaBancaria(double saldo) {
+	public ContaEspecial(double saldo) {
 		this.saldo = saldo;
 	}
 
 	public void depositar(double valor) {
 		if (valor > 0) {
 			saldo += valor;
-			System.out.println("Depósito realizado. Novo saldo: R$ " + saldo);
+			System.out.println("Depósito realizado. Saldo atual: R$ " + saldo);
 		} else {
 			System.out.println("Valor de depósito inválido!");
 		}
 	}
 
 	public void sacar(double valor) {
-		double taxa = 1.00;
+		double taxa = 0.50;
 		if (valor + taxa > saldo) {
 			System.out.println("Saldo insuficiente para saque.");
 		} else {
@@ -51,4 +51,5 @@ public class ContaBancaria implements TransacaoBancaria {
 	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
+
 }

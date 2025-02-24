@@ -1,4 +1,4 @@
-package questao1;
+package banco;
 
 public interface TransacaoBancaria {
 	public void depositar(double valor);

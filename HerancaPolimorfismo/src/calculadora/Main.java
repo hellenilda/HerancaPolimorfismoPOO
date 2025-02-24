@@ -1,4 +1,4 @@
-package questao2;
+package calculadora;
 
 import java.util.Scanner;
 

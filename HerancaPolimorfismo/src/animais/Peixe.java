@@ -1,4 +1,4 @@
-package questao3;
+package animais;
 
 public class Peixe extends Animal {
 	private String habitat;

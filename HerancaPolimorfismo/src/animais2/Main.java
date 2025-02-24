@@ -1,4 +1,4 @@
-package questao4;
+package animais2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
